@@ -5,6 +5,8 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -31,7 +33,7 @@
     "workbox-streams": "^6.5.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "wrangler pages dev --ip=localhost --port=3999 --proxy=3998 -- cross-env BROWSER=none PORT=3998 WDS_SOCKET_PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -55,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "wrangler": "^2.6.2"
   },
   "main": "index.js",
